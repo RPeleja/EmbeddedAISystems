@@ -24,7 +24,7 @@ def main():
     data_path = config.DATA_PATH.lstrip('/\\')
 
     # Load irrigation data)
-    irrigation_df = pd.read_csv(f"{data_path}dados.csv")
+    irrigation_df = pd.read_csv(f"{data_path}dados_arduino_interior.csv")
     logger.info(f"Irrigation data loaded with {len(irrigation_df)} rows")
     
     # Check if weather data exists and load
@@ -33,7 +33,8 @@ def main():
     
     if use_weather_data:
         
-        weather_df = pd.read_csv(weather_data_path)
+        weather_df = pd.read_csv(weather_data_path, sep=';', encoding='utf-8')
+
         logger.info(f"Weather data loaded with {len(weather_df)} rows")
         
         # Preprocess irrigation data
@@ -86,6 +87,8 @@ def main():
     # Feature importance analysis for tree-based models
     tree_models = ['random_forest', 'gradient_boosting']
     feature_columns = X.columns
+    # Ensure MODEL_PATH does not start with a slash
+    model_path = config.MODEL_PATH.lstrip('/\\')
 
     for model_name in tree_models:
         if model_name in trained_models:
@@ -99,19 +102,19 @@ def main():
                 plt.yticks(range(len(indices)), [feature_columns[i] for i in indices])
                 plt.xlabel('Relative Importance')
                 plt.tight_layout()
-                plt.savefig(f"{config.MODEL_PATH}{model_name}_feature_importance.png")
+                plt.savefig(f"{data_path}{model_name}_feature_importance.png")
 
     # Save artifacts
-    os.makedirs(config.MODEL_PATH, exist_ok=True)
-    joblib.dump(trained_models[best_model_name], f"{config.MODEL_PATH}best_model.pkl")
-    joblib.dump(preprocessor.scaler, f"{config.MODEL_PATH}scaler.pkl")
-    joblib.dump(preprocessor.imputer, f"{config.MODEL_PATH}imputer.pkl")
+    os.makedirs(model_path, exist_ok=True)
+    joblib.dump(trained_models[best_model_name], f"{model_path}best_model.pkl")
+    joblib.dump(preprocessor.scaler, f"{model_path}scaler.pkl")
+    joblib.dump(preprocessor.imputer, f"{model_path}imputer.pkl")
 
     # Save feature columns list for future inference
-    with open(f"{config.MODEL_PATH}feature_columns.txt", 'w') as f:
+    with open(f"{model_path}feature_columns.txt", 'w') as f:
         f.write(','.join(preprocessor.feature_columns))
 
-    logger.info(f"All artifacts saved to {config.MODEL_PATH}")
+    logger.info(f"All artifacts saved to {model_path}")
 
 if __name__ == "__main__":
     main()
