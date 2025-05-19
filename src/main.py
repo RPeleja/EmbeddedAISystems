@@ -30,6 +30,9 @@ def main():
 
     df = preprocessor.preprocess(irrigation_df)
     
+    # Correlation analysis
+    evaluator.plot_correlation_matrix(data_path, df)
+    
     # Prepare feature set
     X, y = preprocessor.prepare_features(df)
     logger.info(f"Features prepared: {X.columns.tolist()}")

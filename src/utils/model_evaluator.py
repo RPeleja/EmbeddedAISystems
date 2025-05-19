@@ -45,6 +45,15 @@ class ModelEvaluator:
             }
         return results
 
+    def plot_correlation_matrix(self, data_path, df):
+        # Plot correlation matrix
+        corr_matrix = df.corr(numeric_only=True)
+        plt.figure(figsize=(12, 8))
+        sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm", square=True)
+        plt.title("Correlation Matrix")
+        plt.tight_layout()
+        plt.savefig(f"{data_path}correlation_matrix.png")
+
     def plot_results(self, results, y_test):
         # Helps visualize how well the model predicts the target.
         plt.figure(figsize=(10, 6))
