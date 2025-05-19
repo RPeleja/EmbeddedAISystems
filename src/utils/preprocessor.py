@@ -67,8 +67,9 @@ class DataPreprocessor:
         """
         Integrates weather data with irrigation data based on timestamps
         """
+        
         # Prepare weather data
-        weather_df['timestamp'] = pd.to_datetime(weather_df['timestamp'])
+        weather_df['timestamp'] = pd.to_datetime(weather_df['timestamp'], dayfirst=True)
         
         # Select useful columns from weather data
         weather_features = [
