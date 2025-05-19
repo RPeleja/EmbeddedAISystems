@@ -71,10 +71,10 @@ with open(nome_arquivo, 'w', newline='') as csvfile:
 
                     if umidade < umidade_limite:
                         ultima_rega = tempo_rega
-                        print(f"⚠️  Rega necessária: {tempo_rega} minutos\n")
+                        print(f"Rega necessária: {tempo_rega} minutos\n")
                     else:
                         tempo_rega = 0  # Sem rega se a umidade está OK
-                        print("✅ Sem necessidade de rega\n")
+                        print("Sem necessidade de rega\n")
 
                     # Grava dados no CSV, incluindo o tempo de rega
                     writer.writerow([

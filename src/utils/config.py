@@ -18,20 +18,20 @@ class Config:
     DATA_PATH = '/data/'
     MODELS = {
         'linear_regression': LinearRegression(),
-        'random_forest': RandomForestRegressor(
-            n_estimators=100,
-            random_state=RANDOM_STATE
-        ),
-        'gradient_boosting': GradientBoostingRegressor(
-            n_estimators=150,
-            learning_rate=0.05,
-            max_depth=5,
-            random_state=RANDOM_STATE
-        ),
-        'svr': SVR(
-            kernel='rbf',
-            C=10.0,
-            epsilon=0.1,
-            gamma='scale'
-        )
+        # 'random_forest': RandomForestRegressor(
+        #     n_estimators=100,
+        #     random_state=RANDOM_STATE
+        # ),
+        # 'gradient_boosting': GradientBoostingRegressor(
+        #     n_estimators=150,
+        #     learning_rate=0.05,
+        #     max_depth=5,
+        #     random_state=RANDOM_STATE
+        # ),
+        # 'svr': SVR(
+        #     kernel='rbf',
+        #     C=10.0,
+        #     epsilon=0.1,
+        #     gamma='scale'
+        # )
     }
