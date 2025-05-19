@@ -43,8 +43,9 @@ void setup() {
 void loop() {
   float temperatura = htu.readTemperature();
   float humidade = htu.readHumidity();
+  float minutos = calcularTempoRega(temperatura,humidade);
 
-  float X_test[] = {temperatura, humidade, calcularTempoRega(temperatura,humidade) };  // insira os valores reais
+  float X_test[] = {temperatura, humidade, minutos };  // insira os valores reais
   float prediction = model.predict(X_test);
   Serial.println(prediction);
   delay(1000);
