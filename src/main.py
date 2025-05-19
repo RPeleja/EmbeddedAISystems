@@ -85,5 +85,14 @@ def main():
 
     logger.info(f"All artifacts saved to {model_path}")
 
+
+    # Carrega o modelo treinado
+    model = joblib.load('models/best_model.pkl')
+
+    # Extrai coeficientes e intercepto
+    print("Coeficientes:", model.coef_)
+    print("Intercepto:", model.intercept_)
+
+
 if __name__ == "__main__":
     main()
