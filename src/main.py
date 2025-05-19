@@ -24,41 +24,10 @@ def main():
     data_path = config.DATA_PATH.lstrip('/\\')
 
     # Load irrigation data)
-    irrigation_df = pd.read_csv(f"{data_path}dados_arduino_interior.csv")
+    irrigation_df = pd.read_csv(f"{data_path}dados_arduino.csv")
     logger.info(f"Irrigation data loaded with {len(irrigation_df)} rows")
-    
-    # Check if weather data exists and load
-    weather_data_path = f"{data_path}weather-porto-2024x.csv"
-    use_weather_data = os.path.exists(weather_data_path)
-    
-    if use_weather_data:
-        
-        weather_df = pd.read_csv(weather_data_path, sep=';', encoding='utf-8')
 
-        logger.info(f"Weather data loaded with {len(weather_df)} rows")
-        
-        # Preprocess irrigation data
-        irrigation_df = preprocessor.preprocess(irrigation_df)
-        
-        # Integrate weather data
-        df = preprocessor.integrate_weather_data(irrigation_df, weather_df)
-        logger.info(f"Data integrated with {len(df)} rows after merging")
-        
-        # Display correlation matrix
-        corr_matrix = df.corr()
-        plt.figure(figsize=(12, 10))
-        plt.title("Feature Correlation Matrix")
-        plt.imshow(corr_matrix, cmap='coolwarm')
-        plt.colorbar()
-        plt.xticks(range(len(corr_matrix.columns)), corr_matrix.columns, rotation=90)
-        plt.yticks(range(len(corr_matrix.columns)), corr_matrix.columns)
-        plt.tight_layout()
-        plt.savefig(f"{config.DATA_PATH}correlation_matrix.png")
-        logger.info(f"Correlation matrix saved to {config.DATA_PATH}correlation_matrix.png")
-            
-    else:
-        # Just use irrigation data
-        df = preprocessor.preprocess(irrigation_df)
+    df = preprocessor.preprocess(irrigation_df)
     
     # Prepare feature set
     X, y = preprocessor.prepare_features(df)
