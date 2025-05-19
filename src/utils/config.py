@@ -7,9 +7,11 @@
         MODEL_PATH (str): Directory for saving trained models
         DATA_PATH (str): Directory for input data files
 """
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.svm import SVR
+from xgboost import XGBRegressor
 
 class Config:
     RANDOM_STATE = 42
@@ -18,20 +20,25 @@ class Config:
     DATA_PATH = '/data/'
     MODELS = {
         'linear_regression': LinearRegression(),
-        # 'random_forest': RandomForestRegressor(
-        #     n_estimators=100,
-        #     random_state=RANDOM_STATE
-        # ),
-        # 'gradient_boosting': GradientBoostingRegressor(
-        #     n_estimators=150,
-        #     learning_rate=0.05,
-        #     max_depth=5,
-        #     random_state=RANDOM_STATE
-        # ),
-        # 'svr': SVR(
-        #     kernel='rbf',
-        #     C=10.0,
-        #     epsilon=0.1,
-        #     gamma='scale'
-        # )
+        'random_forest': RandomForestRegressor(
+            n_estimators=100,
+            random_state=RANDOM_STATE
+        ),
+        'xgboost': XGBRegressor(
+            n_estimators=10,
+            max_depth=3,
+            learning_rate=0.1
+        ),
+        'decision_tree': DecisionTreeRegressor(
+            max_depth=3,
+            min_samples_leaf=3,
+            max_leaf_nodes=10,
+            random_state=RANDOM_STATE
+        )
+    }
+    MODELS_NAMES = {
+        'random_forest': 'RandomForestRegressor',
+        'xgboost': 'XGBRegressor',
+        'decision_tree': 'DecisionTreeRegressor',
+        'linear_regression': 'LinearRegression'
     }

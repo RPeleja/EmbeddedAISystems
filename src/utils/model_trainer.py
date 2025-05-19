@@ -49,13 +49,16 @@ class ModelTrainer:
         for name, model in self.models.items():
             model.fit(X_train, y_train)
             
+            score = model.score(X_train, y_train)
+            print(f"{name} | Training Score: {score:.2f}")
+            
             # Optional: Cross-validation
             cv_scores = cross_val_score(
                 model, X_train, y_train, 
                 cv=5, scoring='neg_mean_squared_error'
             )
             rmse_cv = np.sqrt(-cv_scores.mean())
-            print(f"{name} | CV RMSE: {rmse_cv:.2f}")
+            print(f"{name} | Training Cross Validation RMSE: {rmse_cv:.2f}")
             
             trained_models[name] = model
         return trained_models

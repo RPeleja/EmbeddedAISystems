@@ -8,6 +8,7 @@ from utils.model_trainer import ModelTrainer
 from utils.model_evaluator import ModelEvaluator
 import joblib
 import os
+import m2cgen as m2c
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -41,37 +42,24 @@ def main():
     trained_models = trainer.train_models(X_train_scaled, y_train)
     results = evaluator.evaluate_models(trained_models, X_test_scaled, y_test)
     
-    # Find best model
+    # Find best model with minimum RMSE
     best_model_name = min(results, key=lambda model: results[model]['rmse'])
-    best_rmse = results[best_model_name]['rmse']
-    logger.info(f"Best model: {best_model_name} with RMSE: {best_rmse:.4f}")
+
+    # Ensure MODEL_PATH does not start with a slash
+    model_path = config.MODEL_PATH.lstrip('/\\')
     
     # Compare model performance
     for name, metrics in results.items():
-        logger.info(f"{name:20} | RMSE: {metrics['rmse']:.4f} | MAE: {metrics['mae']:.4f} | R²: {metrics['r2']:.4f}")
+        logger.info(f"{name:20} | SCORE: {metrics['score']:.4f} | RMSE: {metrics['rmse']:.4f} | MAE: {metrics['mae']:.4f} | R²: {metrics['r2']:.4f}")
     
-    # # Plot results
+    if best_model_name in ['random_forest', 'xgboost', 'decision_tree']:
+        # Feature importance analysis for tree-based models
+        evaluator.plot_feature_importance(data_path, trained_models, [best_model_name], X.columns)
+    
+    # Plot results
     evaluator.plot_results(results, y_test)
 
-    # Feature importance analysis for tree-based models
-    tree_models = ['random_forest', 'gradient_boosting']
-    feature_columns = X.columns
-    # Ensure MODEL_PATH does not start with a slash
-    model_path = config.MODEL_PATH.lstrip('/\\')
-
-    for model_name in tree_models:
-        if model_name in trained_models:
-            model = trained_models[model_name]
-            if hasattr(model, 'feature_importances_'):
-                plt.figure(figsize=(10, 6))
-                importances = model.feature_importances_
-                indices = np.argsort(importances)
-                plt.title(f'Feature Importance - {model_name}')
-                plt.barh(range(len(indices)), importances[indices], color='b', align='center')
-                plt.yticks(range(len(indices)), [feature_columns[i] for i in indices])
-                plt.xlabel('Relative Importance')
-                plt.tight_layout()
-                plt.savefig(f"{data_path}{model_name}_feature_importance.png")
+    logger.info(f"Best model: {best_model_name} with SCORE: {results[best_model_name]['score'] * 100:.2f}%")
 
     # Save artifacts
     os.makedirs(model_path, exist_ok=True)
@@ -79,20 +67,17 @@ def main():
     joblib.dump(preprocessor.scaler, f"{model_path}scaler.pkl")
     joblib.dump(preprocessor.imputer, f"{model_path}imputer.pkl")
 
-    # Save feature columns list for future inference
-    with open(f"{model_path}feature_columns.txt", 'w') as f:
-        f.write(','.join(preprocessor.feature_columns))
-
     logger.info(f"All artifacts saved to {model_path}")
 
-
-    # Carrega o modelo treinado
+    # Load the trained model
     model = joblib.load('models/best_model.pkl')
 
-    # Extrai coeficientes e intercepto
-    print("Coeficientes:", model.coef_)
-    print("Intercepto:", model.intercept_)
-
+    # Dynamically construct export path based on best_model_name
+    export_name = config.MODELS_NAMES.get(best_model_name)
+    export_path = f"src/arduino/modelo_arduino/{export_name}.h"
+    with open(export_path, "w") as f:
+        f.write(m2c.export_to_c(model))
+    logger.info(f"Model exported to {export_path}")
 
 if __name__ == "__main__":
     main()

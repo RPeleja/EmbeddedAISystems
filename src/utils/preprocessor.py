@@ -13,12 +13,6 @@
             - Creates target variable
             Returns: Preprocessed DataFrame
 
-        integrate_weather_data(irrigation_df, weather_df):
-            Joins irrigation data with weather observations
-            - Aligns timestamps and merges datasets
-            - Handles duplicate observations
-            Returns: Integrated DataFrame with enriched features
-
         prepare_features(df):
             Separates features and target variables
             Returns: (features DataFrame, target Series)
@@ -50,6 +44,10 @@ class DataPreprocessor:
         df['hora'] = df['data'].dt.hour
         
         # Cyclical encoding for time features
+        ''' This tells the model:
+            Hour 23 and 0 are close
+            Hour 12 is opposite of hour 0 '''
+            
         df['mes_sin'] = np.sin(2 * np.pi * df['data'].dt.month / 12)
         df['mes_cos'] = np.cos(2 * np.pi * df['data'].dt.month / 12)
         df['dia_sin'] = np.sin(2 * np.pi * df['data'].dt.day / 31)
@@ -62,87 +60,14 @@ class DataPreprocessor:
         df = df.drop(columns=['data'])
         
         return df
-    
-    def integrate_weather_data(self, irrigation_df, weather_df):
-        """
-        Integrates weather data with irrigation data based on timestamps
-        """
-        
-        # Prepare weather data
-        weather_df['timestamp'] = pd.to_datetime(weather_df['timestamp'], dayfirst=True)
-        
-        # Select useful columns from weather data
-        weather_features = [
-            'timestamp', 'barometricpressure', 'precipitation', 
-            'relativehumidity', 'solarradiation', 'temperature',
-            'uv_index', 'winddirection', 'windspeed'
-        ]
-        
-        weather_df = weather_df[weather_features].copy()
-        
-        # Handle missing values in weather data
-        for col in weather_features[1:]:
-            if weather_df[col].dtype == object:
-                # Convert string columns to numeric
-                weather_df[col] = pd.to_numeric(weather_df[col], errors='coerce')
-        
-        # Merge datasets using nearest timestamp match
-        # This handles cases where timestamps don't perfectly align
-        merged_df = pd.merge_asof(
-            irrigation_df.sort_values('timestamp'),
-            weather_df.sort_values('timestamp'),
-            on='timestamp',
-            direction='nearest',
-            tolerance=pd.Timedelta('1h')  # Accept matches within 1 hour
-        )
-        
-        # Create weather-based features
-        if 'temperature_y' in merged_df.columns:
-            # Rename columns to avoid confusion
-            merged_df = merged_df.rename(columns={
-                'temperature_x': 'temperature_sensor',
-                'temperature_y': 'temperature_weather',
-                'relativehumidity': 'humidity_weather'
-            })
-        else:
-            # If there's no column collision
-            merged_df = merged_df.rename(columns={
-                'relativehumidity': 'humidity_weather'
-            })
-            
-        # Create derived features
-        if 'temperature_weather' in merged_df.columns and 'precipitation' in merged_df.columns:
-            # Evapotranspiration proxy (simplified)
-            merged_df['evap_proxy'] = merged_df['temperature_weather'] * 0.5 - merged_df['precipitation'] * 5
-            
-            # Weather stress indicator
-            merged_df['weather_stress'] = (
-                (merged_df['temperature_weather'] > 30) * 2 + 
-                (merged_df['humidity_weather'] < 30) * 1.5 +
-                (merged_df['precipitation'] > 0) * -3
-            )
-        
-        return merged_df
 
     def prepare_features(self, df):
        # Define feature columns based on available columns
         basic_features = ["temperatura", "humidade"]
         time_features = ["ano", "mes", "dia", "hora", "mes_sin", "mes_cos", "hora_sin", "hora_cos"]
-        weather_features = []
-        
-        # Check for weather columns
-        possible_weather_cols = [
-            "precipitation", "barometricpressure", "solarradiation", 
-            "temperature_weather", "humidity_weather", "windspeed",
-            "evap_proxy", "weather_stress"
-        ]
-        
-        for col in possible_weather_cols:
-            if col in df.columns:
-                weather_features.append(col)
         
         # Combine all available features
-        all_features = basic_features + time_features + weather_features
+        all_features = basic_features + time_features
         available_features = [f for f in all_features if f in df.columns]
         
         # Store feature columns for future use
