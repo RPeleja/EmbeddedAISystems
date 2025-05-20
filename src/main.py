@@ -8,6 +8,7 @@ from utils.model_trainer import ModelTrainer
 from utils.model_evaluator import ModelEvaluator
 import joblib
 import os
+import glob
 import m2cgen as m2c
 
 # Setup logging
@@ -24,10 +25,15 @@ def main():
     # Ensure DATA_PATH does not start with a slash
     data_path = config.DATA_PATH.lstrip('/\\')
 
-    # Load irrigation data)
-    irrigation_df = pd.read_csv(f"{data_path}dados_arduino.csv")
-    logger.info(f"Irrigation data loaded with {len(irrigation_df)} rows")
-
+    # Load irrigation data
+    # Load and concatenate all matching files into a single DataFrame
+    # Find all CSV files starting with 'dados_' in the directory
+    csv_files = glob.glob(f"{data_path}dados_*.csv")
+    
+    irrigation_df = pd.concat([pd.read_csv(f) for f in csv_files], ignore_index=True)
+    logger.info(f"Irrigation data loaded with {len(irrigation_df)} rows from {len(csv_files)} files")
+    
+    # Preprocess data
     df = preprocessor.preprocess(irrigation_df)
     
     # Correlation analysis
