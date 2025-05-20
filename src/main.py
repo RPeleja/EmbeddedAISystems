@@ -15,6 +15,64 @@ import m2cgen as m2c
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+def export_model_to_arduino(config, model, best_model_name):
+        """
+        Export the model to Arduino-compatible C++ code.
+        """
+        if best_model_name == 'linear_regression':
+            # Extract coefficients and intercept
+            coef = model.coef_.flatten().tolist()
+            intercept = model.intercept_.item() if np.ndim(model.intercept_) == 0 else model.intercept_[0]
+
+            print("Coefficients:", model.coef_)
+            print("Intercept:", model.intercept_)
+
+            # Generate the contents of the .h file
+            export_name = config.MODELS_NAMES.get(best_model_name)
+            export_path = f"src/arduino/modelo_arduino/{export_name}.h"
+
+            with open(export_path, "w") as f:
+                f.write("#pragma once\n")
+                f.write("namespace Eloquent {\n")
+                f.write("    namespace ML {\n")
+                f.write("        namespace Port {\n")
+                f.write("            class LinearRegression {\n")
+                f.write("                public:\n")
+                f.write("                    float predict(float *x) {\n")
+                f.write("                        return dot(x,\n")
+                
+                # Write coefficients with line breaks
+                for i, c in enumerate(coef):
+                    end_char = ",\n" if i < len(coef) - 1 else "\n"
+                    f.write(f"                            {c:.8f}{end_char}")
+                
+                f.write(f"                        ) + {intercept:.8f};\n")
+                f.write("                    }\n\n")
+                f.write("                protected:\n")
+                f.write("                    float dot(float *x, ...) {\n")
+                f.write(f"                        va_list w;\n")
+                f.write(f"                        va_start(w, {len(coef)});\n")
+                f.write("                        float dot = 0.0;\n")
+                f.write(f"                        for (uint16_t i = 0; i < {len(coef)}; i++) {{\n")
+                f.write("                            const float wi = va_arg(w, double);\n")
+                f.write("                            dot += x[i] * wi;\n")
+                f.write("                        }\n")
+                f.write("                        return dot;\n")
+                f.write("                    }\n")
+                f.write("            };\n")
+                f.write("        }\n")
+                f.write("    }\n")
+                f.write("}\n")
+
+            logger.info(f"Linear regression model exported to {export_path}")
+        else:
+            # Dynamically construct export path based on best_model_name
+            export_name = config.MODELS_NAMES.get(best_model_name)
+            export_path = f"src/arduino/modelo_arduino/{export_name}.h"
+            with open(export_path, "w") as f:
+                f.write(m2c.export_to_c(model))
+            logger.info(f"Model exported to {export_path}")
+
 def main():
     # Initialize components
     config = Config()
@@ -80,13 +138,7 @@ def main():
 
     # Load the trained model
     model = joblib.load('models/best_model.pkl')
-
-    # Dynamically construct export path based on best_model_name
-    export_name = config.MODELS_NAMES.get(best_model_name)
-    export_path = f"src/arduino/modelo_arduino/{export_name}.h"
-    with open(export_path, "w") as f:
-        f.write(m2c.export_to_c(model))
-    logger.info(f"Model exported to {export_path}")
+    export_model_to_arduino(config, model, best_model_name)
 
 if __name__ == "__main__":
     main()
