@@ -18,11 +18,11 @@ void loop() {
   float temp = htu.readTemperature();
   float hum = htu.readHumidity();
 
-  Serial.print("Temperature: ");
+  Serial.print("Temperatura: ");
   Serial.print(temp);
   Serial.println(" °C");
 
-  Serial.print("Humidity: ");
+  Serial.print("Humidade: ");
   Serial.print(hum);
   Serial.println(" %");
 
