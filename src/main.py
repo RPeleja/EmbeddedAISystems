@@ -68,10 +68,14 @@ def export_model_to_arduino(config, model, best_model_name):
         else:
             # Dynamically construct export path based on best_model_name
             export_name = config.MODELS_NAMES.get(best_model_name)
-            export_path = f"src/arduino/modelo_arduino/{export_name}.h"
+            export_path = f"src/arduino/modelo_arduino/{export_name}.c"
             with open(export_path, "w") as f:
                 f.write(m2c.export_to_c(model))
             logger.info(f"Model exported to {export_path}")
+            
+            
+            # double score(double input)
+            
 
 def main():
     # Initialize components

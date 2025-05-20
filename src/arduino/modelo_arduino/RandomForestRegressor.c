@@ -1,14 +1,12 @@
 double score(double * input) {
     double var0;
-    if (input[1] <= -1.087333619594574) {
-        var0 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var0 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var0 = 4.0;
+                } else {
+                    var0 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -28,15 +26,17 @@ double score(double * input) {
                 var0 = 3.0;
             }
         }
+    } else {
+        var0 = 20.0;
     }
     double var1;
     if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var1 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var1 = 4.0;
+                } else {
+                    var1 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -60,7 +60,9 @@ double score(double * input) {
         var1 = 20.0;
     }
     double var2;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var2 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7123934924602509) {
                 if (input[0] <= -0.8065001890063286) {
@@ -86,8 +88,6 @@ double score(double * input) {
                 var2 = 3.0;
             }
         }
-    } else {
-        var2 = 20.0;
     }
     double var3;
     if (input[0] <= 0.6695243418216705) {
@@ -120,15 +120,13 @@ double score(double * input) {
         var3 = 20.0;
     }
     double var4;
-    if (input[1] <= -1.087333619594574) {
-        var4 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var4 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var4 = 4.0;
+                } else {
+                    var4 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -148,6 +146,8 @@ double score(double * input) {
                 var4 = 3.0;
             }
         }
+    } else {
+        var4 = 20.0;
     }
     double var5;
     if (input[1] <= -1.084128975868225) {
@@ -167,10 +167,10 @@ double score(double * input) {
             if (input[1] <= 0.9283700287342072) {
                 if (input[1] <= 0.6399545669555664) {
                     if (input[0] <= 0.007858160912292078) {
-                        if (input[0] <= -0.02122606709599495) {
-                            var5 = 4.0;
-                        } else {
+                        if (input[7] <= 0.5668401569128036) {
                             var5 = 1.0;
+                        } else {
+                            var5 = 4.0;
                         }
                     } else {
                         var5 = 4.0;
@@ -187,10 +187,10 @@ double score(double * input) {
     if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var6 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var6 = 4.0;
+                } else {
+                    var6 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -217,10 +217,10 @@ double score(double * input) {
     if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var7 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var7 = 4.0;
+                } else {
+                    var7 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.370236799120903) {
@@ -270,9 +270,7 @@ double score(double * input) {
         var8 = 20.0;
     }
     double var9;
-    if (input[1] <= -1.087333619594574) {
-        var9 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -298,6 +296,8 @@ double score(double * input) {
                 var9 = 3.0;
             }
         }
+    } else {
+        var9 = 20.0;
     }
     double var10;
     if (input[0] <= 0.6622532606124878) {
@@ -305,7 +305,7 @@ double score(double * input) {
             if (input[0] <= -0.3847789168357849) {
                 var10 = 0.0;
             } else {
-                if (input[1] <= 0.7360930740833282) {
+                if (input[7] <= -1.128477156162262) {
                     var10 = 1.0;
                 } else {
                     var10 = 0.0;
@@ -315,7 +315,7 @@ double score(double * input) {
             if (input[1] <= 0.9315746426582336) {
                 if (input[1] <= 0.6431591808795929) {
                     if (input[0] <= 0.007858160912292078) {
-                        if (input[1] <= -0.19645027816295624) {
+                        if (input[4] <= 0.6360059455037117) {
                             var10 = 4.0;
                         } else {
                             var10 = 1.0;
@@ -334,15 +334,13 @@ double score(double * input) {
         var10 = 20.0;
     }
     double var11;
-    if (input[1] <= -1.087333619594574) {
-        var11 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.7992291301488876) {
-                    var11 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var11 = 4.0;
+                } else {
+                    var11 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -362,6 +360,8 @@ double score(double * input) {
                 var11 = 3.0;
             }
         }
+    } else {
+        var11 = 20.0;
     }
     double var12;
     if (input[0] <= 0.6695243418216705) {
@@ -429,10 +429,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var14 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var14 = 4.0;
+                } else {
+                    var14 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.40659208595752716) {
@@ -454,13 +454,15 @@ double score(double * input) {
         }
     }
     double var15;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var15 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var15 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var15 = 4.0;
+                } else {
+                    var15 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -480,8 +482,6 @@ double score(double * input) {
                 var15 = 3.0;
             }
         }
-    } else {
-        var15 = 20.0;
     }
     double var16;
     if (input[1] <= -1.087333619594574) {
@@ -489,10 +489,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var16 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var16 = 4.0;
+                } else {
+                    var16 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -548,13 +548,15 @@ double score(double * input) {
         var17 = 20.0;
     }
     double var18;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var18 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var18 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var18 = 4.0;
+                } else {
+                    var18 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -574,11 +576,11 @@ double score(double * input) {
                 var18 = 3.0;
             }
         }
-    } else {
-        var18 = 20.0;
     }
     double var19;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.090538203716278) {
+        var19 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[0] <= -0.13756298273801804) {
                 if (input[0] <= -0.3993210345506668) {
@@ -594,7 +596,7 @@ double score(double * input) {
                 if (input[1] <= -0.20285950601100922) {
                     var19 = 4.0;
                 } else {
-                    if (input[1] <= 0.5598391592502594) {
+                    if (input[3] <= -0.26627208292484283) {
                         var19 = 1.0;
                     } else {
                         var19 = 0.0;
@@ -608,8 +610,6 @@ double score(double * input) {
                 var19 = 3.0;
             }
         }
-    } else {
-        var19 = 20.0;
     }
     double var20;
     if (input[1] <= -1.087333619594574) {
@@ -617,10 +617,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var20 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var20 = 4.0;
+                } else {
+                    var20 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -642,9 +642,7 @@ double score(double * input) {
         }
     }
     double var21;
-    if (input[1] <= -1.087333619594574) {
-        var21 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -670,15 +668,19 @@ double score(double * input) {
                 var21 = 3.0;
             }
         }
+    } else {
+        var21 = 20.0;
     }
     double var22;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var22 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var22 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var22 = 4.0;
+                } else {
+                    var22 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -698,8 +700,6 @@ double score(double * input) {
                 var22 = 3.0;
             }
         }
-    } else {
-        var22 = 20.0;
     }
     double var23;
     if (input[1] <= -1.087333619594574) {
@@ -707,10 +707,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.7992291301488876) {
-                    var23 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var23 = 4.0;
+                } else {
+                    var23 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -732,15 +732,13 @@ double score(double * input) {
         }
     }
     double var24;
-    if (input[1] <= -1.087333619594574) {
-        var24 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.7992291301488876) {
-                    var24 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var24 = 4.0;
+                } else {
+                    var24 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -760,6 +758,8 @@ double score(double * input) {
                 var24 = 3.0;
             }
         }
+    } else {
+        var24 = 20.0;
     }
     double var25;
     if (input[0] <= 0.6695243418216705) {
@@ -822,7 +822,9 @@ double score(double * input) {
         }
     }
     double var27;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var27 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -848,8 +850,6 @@ double score(double * input) {
                 var27 = 3.0;
             }
         }
-    } else {
-        var27 = 20.0;
     }
     double var28;
     if (input[1] <= -1.087333619594574) {
@@ -857,10 +857,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var28 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var28 = 4.0;
+                } else {
+                    var28 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -882,13 +882,15 @@ double score(double * input) {
         }
     }
     double var29;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var29 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6066411584615707) {
-                if (input[0] <= -0.8065001890063286) {
-                    var29 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var29 = 4.0;
+                } else {
+                    var29 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -908,11 +910,11 @@ double score(double * input) {
                 var29 = 3.0;
             }
         }
-    } else {
-        var29 = 20.0;
     }
     double var30;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var30 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[0] <= -0.1448340341448784) {
                 if (input[0] <= -0.3847789168357849) {
@@ -928,7 +930,7 @@ double score(double * input) {
                 if (input[1] <= -0.20285950601100922) {
                     var30 = 4.0;
                 } else {
-                    if (input[1] <= 0.5470207035541534) {
+                    if (input[3] <= -0.26627208292484283) {
                         var30 = 1.0;
                     } else {
                         var30 = 0.0;
@@ -942,19 +944,15 @@ double score(double * input) {
                 var30 = 3.0;
             }
         }
-    } else {
-        var30 = 20.0;
     }
     double var31;
-    if (input[1] <= -1.087333619594574) {
-        var31 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var31 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var31 = 4.0;
+                } else {
+                    var31 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.40659208595752716) {
@@ -968,12 +966,14 @@ double score(double * input) {
                 }
             }
         } else {
-            if (input[1] <= 0.6431591808795929) {
-                var31 = 4.0;
-            } else {
+            if (input[4] <= -1.0842508673667908) {
                 var31 = 3.0;
+            } else {
+                var31 = 4.0;
             }
         }
+    } else {
+        var31 = 20.0;
     }
     double var32;
     if (input[1] <= -1.087333619594574) {
@@ -981,20 +981,20 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7284165620803833) {
-                if (input[0] <= -0.8137713000178337) {
-                    var32 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var32 = 4.0;
+                } else {
+                    var32 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
                     var32 = 0.0;
                 } else {
                     if (input[1] <= 0.6720007359981537) {
-                        if (input[1] <= -0.2060641199350357) {
-                            var32 = 4.0;
-                        } else {
+                        if (input[7] <= 0.5668401569128036) {
                             var32 = 1.0;
+                        } else {
+                            var32 = 4.0;
                         }
                     } else {
                         var32 = 0.0;
@@ -1016,7 +1016,7 @@ double score(double * input) {
                 if (input[0] <= -0.3847789168357849) {
                     var33 = 0.0;
                 } else {
-                    if (input[1] <= 0.697637677192688) {
+                    if (input[7] <= -1.128477156162262) {
                         var33 = 1.0;
                     } else {
                         var33 = 0.0;
@@ -1026,10 +1026,10 @@ double score(double * input) {
                 if (input[1] <= -0.2060641199350357) {
                     var33 = 4.0;
                 } else {
-                    if (input[1] <= 0.5470207035541534) {
-                        var33 = 1.0;
-                    } else {
+                    if (input[4] <= 0.2014945149421692) {
                         var33 = 0.0;
+                    } else {
+                        var33 = 1.0;
                     }
                 }
             }
@@ -1074,15 +1074,13 @@ double score(double * input) {
         var34 = 20.0;
     }
     double var35;
-    if (input[1] <= -1.087333619594574) {
-        var35 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.7992291301488876) {
-                    var35 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var35 = 4.0;
+                } else {
+                    var35 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -1102,14 +1100,18 @@ double score(double * input) {
                 var35 = 3.0;
             }
         }
+    } else {
+        var35 = 20.0;
     }
     double var36;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var36 = 20.0;
+    } else {
         if (input[0] <= -0.13756298273801804) {
             if (input[0] <= -0.3847789168357849) {
                 var36 = 0.0;
             } else {
-                if (input[1] <= 0.7008422911167145) {
+                if (input[7] <= -1.128477156162262) {
                     var36 = 1.0;
                 } else {
                     var36 = 0.0;
@@ -1122,13 +1124,13 @@ double score(double * input) {
                         var36 = 4.0;
                     } else {
                         if (input[0] <= 0.007858160912292078) {
-                            if (input[1] <= 0.5598391592502594) {
+                            if (input[8] <= 0.7614806890487671) {
                                 var36 = 1.0;
                             } else {
                                 var36 = 0.0;
                             }
                         } else {
-                            if (input[1] <= 0.6335453391075134) {
+                            if (input[3] <= -0.26627208292484283) {
                                 var36 = 4.0;
                             } else {
                                 var36 = 3.0;
@@ -1142,8 +1144,6 @@ double score(double * input) {
                 var36 = 0.0;
             }
         }
-    } else {
-        var36 = 20.0;
     }
     double var37;
     if (input[1] <= -1.087333619594574) {
@@ -1153,7 +1153,7 @@ double score(double * input) {
             if (input[0] <= -0.3847789168357849) {
                 var37 = 0.0;
             } else {
-                if (input[1] <= 0.7008422911167145) {
+                if (input[7] <= -1.128477156162262) {
                     var37 = 1.0;
                 } else {
                     var37 = 0.0;
@@ -1161,22 +1161,18 @@ double score(double * input) {
             }
         } else {
             if (input[1] <= 0.7681392133235931) {
-                if (input[0] <= 0.02967133093625307) {
-                    if (input[0] <= -0.02122606709599495) {
-                        var37 = 4.0;
+                if (input[7] <= 0.3696128875017166) {
+                    if (input[0] <= 0.007858160912292078) {
+                        var37 = 1.0;
                     } else {
-                        if (input[1] <= 0.3323114216327667) {
-                            var37 = 1.0;
-                        } else {
-                            if (input[1] <= 0.5470207035541534) {
-                                var37 = 4.0;
-                            } else {
-                                var37 = 3.0;
-                            }
-                        }
+                        var37 = 4.0;
                     }
                 } else {
-                    var37 = 4.0;
+                    if (input[8] <= 1.003199964761734) {
+                        var37 = 4.0;
+                    } else {
+                        var37 = 3.0;
+                    }
                 }
             } else {
                 if (input[0] <= 0.007858160912292078) {
@@ -1188,7 +1184,9 @@ double score(double * input) {
         }
     }
     double var38;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var38 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -1214,11 +1212,11 @@ double score(double * input) {
                 var38 = 3.0;
             }
         }
-    } else {
-        var38 = 20.0;
     }
     double var39;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var39 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.7992291301488876) {
@@ -1244,13 +1242,9 @@ double score(double * input) {
                 var39 = 3.0;
             }
         }
-    } else {
-        var39 = 20.0;
     }
     double var40;
-    if (input[1] <= -1.087333619594574) {
-        var40 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6066411584615707) {
                 if (input[0] <= -0.8065001890063286) {
@@ -1276,15 +1270,17 @@ double score(double * input) {
                 var40 = 3.0;
             }
         }
+    } else {
+        var40 = 20.0;
     }
     double var41;
     if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7252119481563568) {
-                if (input[0] <= -0.8137713000178337) {
-                    var41 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var41 = 4.0;
+                } else {
+                    var41 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -1312,15 +1308,13 @@ double score(double * input) {
         var41 = 20.0;
     }
     double var42;
-    if (input[1] <= -1.087333619594574) {
-        var42 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.7992291301488876) {
-                    var42 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var42 = 4.0;
+                } else {
+                    var42 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -1340,9 +1334,13 @@ double score(double * input) {
                 var42 = 3.0;
             }
         }
+    } else {
+        var42 = 20.0;
     }
     double var43;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var43 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7252119481563568) {
                 if (input[0] <= -0.8137713000178337) {
@@ -1355,10 +1353,10 @@ double score(double * input) {
                     var43 = 0.0;
                 } else {
                     if (input[1] <= 0.6720007359981537) {
-                        if (input[1] <= -0.19965489208698273) {
-                            var43 = 4.0;
-                        } else {
+                        if (input[7] <= 0.5668401569128036) {
                             var43 = 1.0;
+                        } else {
+                            var43 = 4.0;
                         }
                     } else {
                         var43 = 0.0;
@@ -1372,8 +1370,6 @@ double score(double * input) {
                 var43 = 3.0;
             }
         }
-    } else {
-        var43 = 20.0;
     }
     double var44;
     if (input[0] <= 0.6622532606124878) {
@@ -1428,23 +1424,21 @@ double score(double * input) {
                 }
             }
         } else {
-            if (input[1] <= 0.6399545669555664) {
-                var45 = 4.0;
-            } else {
+            if (input[0] <= 0.022400274872779846) {
                 var45 = 3.0;
+            } else {
+                var45 = 4.0;
             }
         }
     }
     double var46;
-    if (input[1] <= -1.084128975868225) {
-        var46 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var46 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var46 = 4.0;
+                } else {
+                    var46 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -1458,12 +1452,14 @@ double score(double * input) {
                 }
             }
         } else {
-            if (input[1] <= 0.7296838164329529) {
-                var46 = 4.0;
-            } else {
+            if (input[0] <= 0.02967133093625307) {
                 var46 = 3.0;
+            } else {
+                var46 = 4.0;
             }
         }
+    } else {
+        var46 = 20.0;
     }
     double var47;
     if (input[0] <= 0.6622532606124878) {
@@ -1503,7 +1499,7 @@ double score(double * input) {
             if (input[0] <= -0.3993210345506668) {
                 var48 = 0.0;
             } else {
-                if (input[1] <= 0.7008422911167145) {
+                if (input[7] <= -1.128477156162262) {
                     var48 = 1.0;
                 } else {
                     var48 = 0.0;
@@ -1511,22 +1507,26 @@ double score(double * input) {
             }
         } else {
             if (input[1] <= 0.9315746426582336) {
-                if (input[1] <= 0.6944330632686615) {
-                    if (input[0] <= 0.007858160912292078) {
+                if (input[7] <= 1.3567323088645935) {
+                    if (input[0] <= 0.022400274872779846) {
                         if (input[0] <= -0.02122606709599495) {
                             var48 = 4.0;
                         } else {
-                            var48 = 1.0;
+                            if (input[0] <= 0.007858160912292078) {
+                                var48 = 1.0;
+                            } else {
+                                if (input[1] <= 0.5470207035541534) {
+                                    var48 = 4.0;
+                                } else {
+                                    var48 = 3.0;
+                                }
+                            }
                         }
                     } else {
                         var48 = 4.0;
                     }
                 } else {
-                    if (input[0] <= -0.03576818015426397) {
-                        var48 = 0.0;
-                    } else {
-                        var48 = 3.0;
-                    }
+                    var48 = 0.0;
                 }
             } else {
                 var48 = 0.0;
@@ -1534,9 +1534,7 @@ double score(double * input) {
         }
     }
     double var49;
-    if (input[1] <= -1.087333619594574) {
-        var49 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -1562,9 +1560,13 @@ double score(double * input) {
                 var49 = 3.0;
             }
         }
+    } else {
+        var49 = 20.0;
     }
     double var50;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.084128975868225) {
+        var50 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7252119481563568) {
                 if (input[0] <= -0.8137713000178337) {
@@ -1594,11 +1596,11 @@ double score(double * input) {
                 var50 = 3.0;
             }
         }
-    } else {
-        var50 = 20.0;
     }
     double var51;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var51 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7252119481563568) {
                 if (input[0] <= -0.8137713000178337) {
@@ -1628,8 +1630,6 @@ double score(double * input) {
                 var51 = 3.0;
             }
         }
-    } else {
-        var51 = 20.0;
     }
     double var52;
     if (input[1] <= -1.087333619594574) {
@@ -1692,7 +1692,9 @@ double score(double * input) {
         }
     }
     double var54;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var54 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -1718,8 +1720,6 @@ double score(double * input) {
                 var54 = 3.0;
             }
         }
-    } else {
-        var54 = 20.0;
     }
     double var55;
     if (input[1] <= -1.087333619594574) {
@@ -1791,10 +1791,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var57 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var57 = 4.0;
+                } else {
+                    var57 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -1816,9 +1816,7 @@ double score(double * input) {
         }
     }
     double var58;
-    if (input[1] <= -1.087333619594574) {
-        var58 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[0] <= -0.1448340341448784) {
                 if (input[0] <= -0.3847789168357849) {
@@ -1848,6 +1846,8 @@ double score(double * input) {
                 var58 = 3.0;
             }
         }
+    } else {
+        var58 = 20.0;
     }
     double var59;
     if (input[1] <= -1.087333619594574) {
@@ -1880,13 +1880,15 @@ double score(double * input) {
         }
     }
     double var60;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var60 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var60 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var60 = 4.0;
+                } else {
+                    var60 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -1906,13 +1908,9 @@ double score(double * input) {
                 var60 = 3.0;
             }
         }
-    } else {
-        var60 = 20.0;
     }
     double var61;
-    if (input[1] <= -1.087333619594574) {
-        var61 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -1938,6 +1936,8 @@ double score(double * input) {
                 var61 = 3.0;
             }
         }
+    } else {
+        var61 = 20.0;
     }
     double var62;
     if (input[1] <= -1.087333619594574) {
@@ -1970,13 +1970,15 @@ double score(double * input) {
         }
     }
     double var63;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var63 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var63 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var63 = 4.0;
+                } else {
+                    var63 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.40659208595752716) {
@@ -1996,13 +1998,9 @@ double score(double * input) {
                 var63 = 3.0;
             }
         }
-    } else {
-        var63 = 20.0;
     }
     double var64;
-    if (input[1] <= -1.087333619594574) {
-        var64 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2028,6 +2026,8 @@ double score(double * input) {
                 var64 = 3.0;
             }
         }
+    } else {
+        var64 = 20.0;
     }
     double var65;
     if (input[0] <= 0.6622532606124878) {
@@ -2060,15 +2060,13 @@ double score(double * input) {
         var65 = 20.0;
     }
     double var66;
-    if (input[1] <= -1.090538203716278) {
-        var66 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7188027203083038) {
-                if (input[0] <= -0.8137713000178337) {
-                    var66 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var66 = 4.0;
+                } else {
+                    var66 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -2088,11 +2086,11 @@ double score(double * input) {
                 var66 = 3.0;
             }
         }
+    } else {
+        var66 = 20.0;
     }
     double var67;
-    if (input[1] <= -1.090538203716278) {
-        var67 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2118,6 +2116,8 @@ double score(double * input) {
                 var67 = 3.0;
             }
         }
+    } else {
+        var67 = 20.0;
     }
     double var68;
     if (input[1] <= -1.087333619594574) {
@@ -2125,10 +2125,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var68 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var68 = 4.0;
+                } else {
+                    var68 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -2183,20 +2183,20 @@ double score(double * input) {
     if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7123934924602509) {
-                if (input[0] <= -0.8137713000178337) {
-                    var70 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var70 = 4.0;
+                } else {
+                    var70 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
                     var70 = 0.0;
                 } else {
                     if (input[1] <= 0.6720007359981537) {
-                        if (input[1] <= -0.20285950601100922) {
-                            var70 = 4.0;
-                        } else {
+                        if (input[7] <= 0.5668401569128036) {
                             var70 = 1.0;
+                        } else {
+                            var70 = 4.0;
                         }
                     } else {
                         var70 = 0.0;
@@ -2274,7 +2274,9 @@ double score(double * input) {
         }
     }
     double var73;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var73 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2300,8 +2302,6 @@ double score(double * input) {
                 var73 = 3.0;
             }
         }
-    } else {
-        var73 = 20.0;
     }
     double var74;
     if (input[1] <= -1.087333619594574) {
@@ -2311,7 +2311,7 @@ double score(double * input) {
             if (input[0] <= -0.3847789168357849) {
                 var74 = 0.0;
             } else {
-                if (input[1] <= 0.7360930740833282) {
+                if (input[7] <= -1.128477156162262) {
                     var74 = 1.0;
                 } else {
                     var74 = 0.0;
@@ -2324,7 +2324,7 @@ double score(double * input) {
                         var74 = 4.0;
                     } else {
                         if (input[0] <= 0.007858160912292078) {
-                            if (input[1] <= 0.5470207035541534) {
+                            if (input[8] <= 0.9098998308181763) {
                                 var74 = 1.0;
                             } else {
                                 var74 = 0.0;
@@ -2376,13 +2376,15 @@ double score(double * input) {
         }
     }
     double var76;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var76 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var76 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var76 = 4.0;
+                } else {
+                    var76 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -2402,8 +2404,6 @@ double score(double * input) {
                 var76 = 3.0;
             }
         }
-    } else {
-        var76 = 20.0;
     }
     double var77;
     if (input[1] <= -1.0873335599899292) {
@@ -2436,7 +2436,9 @@ double score(double * input) {
         }
     }
     double var78;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var78 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2462,17 +2464,17 @@ double score(double * input) {
                 var78 = 3.0;
             }
         }
-    } else {
-        var78 = 20.0;
     }
     double var79;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var79 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var79 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var79 = 4.0;
+                } else {
+                    var79 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -2492,8 +2494,6 @@ double score(double * input) {
                 var79 = 3.0;
             }
         }
-    } else {
-        var79 = 20.0;
     }
     double var80;
     if (input[1] <= -1.087333619594574) {
@@ -2526,9 +2526,7 @@ double score(double * input) {
         }
     }
     double var81;
-    if (input[1] <= -1.087333619594574) {
-        var81 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2554,15 +2552,17 @@ double score(double * input) {
                 var81 = 3.0;
             }
         }
+    } else {
+        var81 = 20.0;
     }
     double var82;
     if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var82 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var82 = 4.0;
+                } else {
+                    var82 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -2589,10 +2589,10 @@ double score(double * input) {
     if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var83 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var83 = 4.0;
+                } else {
+                    var83 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.40659208595752716) {
@@ -2676,13 +2676,15 @@ double score(double * input) {
         }
     }
     double var86;
-    if (input[0] <= 0.6622532606124878) {
+    if (input[1] <= -1.087333619594574) {
+        var86 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var86 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var86 = 4.0;
+                } else {
+                    var86 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -2702,17 +2704,15 @@ double score(double * input) {
                 var86 = 3.0;
             }
         }
-    } else {
-        var86 = 20.0;
     }
     double var87;
     if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var87 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var87 = 4.0;
+                } else {
+                    var87 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -2741,10 +2741,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.7123934924602509) {
-                if (input[0] <= -0.8065001890063286) {
-                    var88 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var88 = 4.0;
+                } else {
+                    var88 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -2766,9 +2766,7 @@ double score(double * input) {
         }
     }
     double var89;
-    if (input[1] <= -1.087333619594574) {
-        var89 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2794,11 +2792,11 @@ double score(double * input) {
                 var89 = 3.0;
             }
         }
+    } else {
+        var89 = 20.0;
     }
     double var90;
-    if (input[1] <= -1.087333619594574) {
-        var90 = 20.0;
-    } else {
+    if (input[0] <= 0.6622532606124878) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2824,6 +2822,8 @@ double score(double * input) {
                 var90 = 3.0;
             }
         }
+    } else {
+        var90 = 20.0;
     }
     double var91;
     if (input[1] <= -1.090538203716278) {
@@ -2831,10 +2831,10 @@ double score(double * input) {
     } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var91 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var91 = 4.0;
+                } else {
+                    var91 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -2856,15 +2856,13 @@ double score(double * input) {
         }
     }
     double var92;
-    if (input[1] <= -1.087333619594574) {
-        var92 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
-                if (input[0] <= -0.8065001890063286) {
-                    var92 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var92 = 4.0;
+                } else {
+                    var92 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3993210345506668) {
@@ -2884,6 +2882,8 @@ double score(double * input) {
                 var92 = 3.0;
             }
         }
+    } else {
+        var92 = 20.0;
     }
     double var93;
     if (input[1] <= -1.090538203716278) {
@@ -2908,15 +2908,17 @@ double score(double * input) {
                 }
             }
         } else {
-            if (input[0] <= 0.022400274872779846) {
-                var93 = 3.0;
-            } else {
+            if (input[1] <= 0.6944330632686615) {
                 var93 = 4.0;
+            } else {
+                var93 = 3.0;
             }
         }
     }
     double var94;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var94 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -2942,17 +2944,15 @@ double score(double * input) {
                 var94 = 3.0;
             }
         }
-    } else {
-        var94 = 20.0;
     }
     double var95;
     if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var95 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var95 = 4.0;
+                } else {
+                    var95 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.3847789168357849) {
@@ -2976,9 +2976,7 @@ double score(double * input) {
         var95 = 20.0;
     }
     double var96;
-    if (input[1] <= -1.087333619594574) {
-        var96 = 20.0;
-    } else {
+    if (input[0] <= 0.6695243418216705) {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6034365445375443) {
                 if (input[0] <= -0.8065001890063286) {
@@ -3004,15 +3002,19 @@ double score(double * input) {
                 var96 = 3.0;
             }
         }
+    } else {
+        var96 = 20.0;
     }
     double var97;
-    if (input[0] <= 0.6695243418216705) {
+    if (input[1] <= -1.087333619594574) {
+        var97 = 20.0;
+    } else {
         if (input[0] <= 0.007858160912292078) {
             if (input[1] <= -0.6002319306135178) {
-                if (input[0] <= -0.8065001890063286) {
-                    var97 = 0.0;
-                } else {
+                if (input[6] <= 0.19184142351150513) {
                     var97 = 4.0;
+                } else {
+                    var97 = 0.0;
                 }
             } else {
                 if (input[0] <= -0.40659208595752716) {
@@ -3032,8 +3034,6 @@ double score(double * input) {
                 var97 = 3.0;
             }
         }
-    } else {
-        var97 = 20.0;
     }
     double var98;
     if (input[1] <= -1.087333619594574) {
