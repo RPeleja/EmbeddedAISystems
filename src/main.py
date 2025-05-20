@@ -143,6 +143,6 @@ def main():
     # Load the trained model
     model = joblib.load('models/best_model.pkl')
     export_model_to_arduino(config, model, best_model_name)
-
+    
 if __name__ == "__main__":
     main()

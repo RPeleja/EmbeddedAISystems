@@ -20,21 +20,21 @@ class Config:
     DATA_PATH = '/data/'
     MODELS = {
         'linear_regression': LinearRegression(),
-        # 'random_forest': RandomForestRegressor(
-        #     n_estimators=100,
-        #     random_state=RANDOM_STATE
-        # ),
-        # 'xgboost': XGBRegressor(
-        #     n_estimators=10,
-        #     max_depth=3,
-        #     learning_rate=0.1
-        # ),
-        # 'decision_tree': DecisionTreeRegressor(
-        #     max_depth=3,
-        #     min_samples_leaf=3,
-        #     max_leaf_nodes=10,
-        #     random_state=RANDOM_STATE
-        # )
+        'random_forest': RandomForestRegressor(
+            n_estimators=100,
+            random_state=RANDOM_STATE
+        ),
+        'xgboost': XGBRegressor(
+            n_estimators=10,
+            max_depth=3,
+            learning_rate=0.1
+        ),
+        'decision_tree': DecisionTreeRegressor(
+            max_depth=3,
+            min_samples_leaf=3,
+            max_leaf_nodes=10,
+            random_state=RANDOM_STATE
+        )
     }
     MODELS_NAMES = {
         'random_forest': 'RandomForestRegressor',

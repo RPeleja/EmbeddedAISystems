@@ -62,7 +62,7 @@ class DataPreprocessor:
         return df
 
     def prepare_features(self, df):
-       # Define feature columns based on available columns
+        # Define feature columns based on available columns
         basic_features = ["temperatura", "humidade"]
         time_features = ["ano", "dia_sin", "dia_cos","mes_sin", "mes_cos", "hora_sin", "hora_cos"]
         
