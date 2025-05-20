@@ -21,13 +21,55 @@ if not os.path.exists(pasta):
 
 # Function for dynamic irrigation time calculation
 def calcular_tempo_rega(temperatura, humidade):
-    tempo = 10 
-    if temperatura > 25:
-        tempo += int(temperatura - 25)
-    if humidade < 60:
-        tempo += int(60 - humidade)
-    tempo = max(5, min(tempo, 30))
-    return tempo
+    """
+    Calculates the required irrigation time in minutes based on temperature and humidity.
+    
+    Parameters:
+    temperatura (float): Ambient temperature in degrees Celsius (°C)
+    humidade (float): Air humidity percentage (0-100)
+    
+    Returns:
+    float: Recommended irrigation time in minutes
+    """
+    # Set base values and limits
+    tempo_base_rega = 10  # watering minutes in normal conditions
+    
+    # Adjustment based on temperature
+    # The higher the temperature, the longer the watering time
+    fator_temperatura = 0
+    if temperatura < 15:
+        fator_temperatura = -2  # Reduce time on cold days
+    elif 15 <= temperatura < 25:
+        fator_temperatura = 0   # Normal conditions
+    elif 25 <= temperatura < 30:
+        fator_temperatura = 3   # Increase a bit on hot days
+    elif 30 <= temperatura < 35:
+        fator_temperatura = 5   # Increase more on very hot days
+    else:
+        fator_temperatura = 8   # Significantly increase on extremely hot days
+    
+    # Adjustment based on humidity
+    # The lower the humidity, the longer the watering time
+    fator_humidade = 0
+    if humidade > 80:
+        fator_humidade = -3     # Reduce time on very humid days
+    elif 60 <= humidade <= 80:
+        fator_humidade = -1     # Slightly reduce on humid days
+    elif 40 <= humidade < 60:
+        fator_humidade = 0      # Normal conditions
+    elif 20 <= humidade < 40:
+        fator_humidade = 3      # Increase on dry days
+    else:
+        fator_humidade = 5      # Significantly increase on very dry days
+    
+    # Calculation of the final irrigation time
+    tempo_rega = tempo_base_rega + fator_temperatura + fator_humidade
+    
+    # Ensure the minimum time is at least 5 minutes
+    if tempo_rega < 5:
+        tempo_rega = 5
+    
+    return tempo_rega
 
 # CONNECT TO SERIAL PORT
 try:
