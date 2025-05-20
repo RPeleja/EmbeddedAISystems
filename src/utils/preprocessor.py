@@ -64,10 +64,10 @@ class DataPreprocessor:
     def prepare_features(self, df):
        # Define feature columns based on available columns
         basic_features = ["temperatura", "humidade"]
-        time_features = ["ano", "dia_sin", "dia_cos","mes_sin", "mes_cos", "hora_sin", "hora_cos"]
+        #time_features = ["ano", "dia_sin", "dia_cos","mes_sin", "mes_cos", "hora_sin", "hora_cos"]
         
         # Combine all available features
-        all_features = basic_features + time_features
+        all_features = basic_features #+ time_features
         available_features = [f for f in all_features if f in df.columns]
         
         # Store feature columns for future use
