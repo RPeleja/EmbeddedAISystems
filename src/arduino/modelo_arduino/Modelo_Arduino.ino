@@ -1,8 +1,6 @@
 #include <Wire.h>
 #include "Adafruit_HTU21DF.h"
-#include "LinearRegression.h"
-
-Eloquent::ML::Port::LinearRegression model;
+#include "RandomForestRegressor.h"
 
 // Criar instância do sensor
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
@@ -44,7 +42,7 @@ void loop() {
     dia_sin, dia_cos, mes_sin, mes_cos, hora_sin, hora_cos
   };
 
-  float prediction = model.predict(X_test);
+  float prediction = model.score(X_test);
   if (prediction < 0) prediction = 0;  // Opcional: evita valores negativos
 
   Serial.print("Temperatura: "); Serial.print(temperatura); Serial.println(" °C");
