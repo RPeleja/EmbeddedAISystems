@@ -6,8 +6,8 @@ model = joblib.load("models/best_model.pkl")  # caminho para o teu modelo .pkl
 
 dados_novos = pd.DataFrame({
     "data": ["2025-05-16 03:13:00"],
-    "temperatura": [13.8],
-    "humidade": [64.2]
+    "temperatura": [3.8],
+    "humidade": [14.2]
 })
 
 preprocessor = DataPreprocessor()
