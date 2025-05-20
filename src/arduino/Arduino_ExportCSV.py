@@ -4,24 +4,24 @@ import time
 import os
 from datetime import datetime
 
-# CONFIGURAÇÕES
-porta = 'COM5'  # Altere conforme necessário
+# CONFIGURATIONS
+porta = 'COM5'
 baud_rate = 9600
 nome_arquivo = 'C:/temp/dados_arduino.csv'
 
-# VARIÁVEIS CONFIGURÁVEIS
+# CONFIGURABLE VARIABLES
 dias_desde_chuva = 3
 rega_padrao_min = 10
 umidade_limite = 40
 
-# GARANTIR QUE A PASTA EXISTE
+# ENSURE THE FOLDER EXISTS
 pasta = os.path.dirname(nome_arquivo)
 if not os.path.exists(pasta):
     os.makedirs(pasta)
 
-# Função para cálculo dinâmico de tempo de rega
+# Function for dynamic irrigation time calculation
 def calcular_tempo_rega(temperatura, umidade):
-    tempo = 10  # Base de 10 minutos
+    tempo = 10 
     if temperatura > 25:
         tempo += int(temperatura - 25)
     if umidade < 60:
@@ -29,23 +29,23 @@ def calcular_tempo_rega(temperatura, umidade):
     tempo = max(5, min(tempo, 30))
     return tempo
 
-# CONECTAR À PORTA SERIAL
+# CONNECT TO SERIAL PORT
 try:
     ser = serial.Serial(porta, baud_rate, timeout=2)
     time.sleep(2)
     ser.flushInput()
 except serial.SerialException as e:
-    print(f"Erro ao abrir a porta {porta}: {e}")
+    print(f"Error opening port {porta}: {e}")
     exit()
 
-# ABRIR O FICHEIRO E ESCREVER CABEÇALHO
+# OPEN THE FILE AND WRITE HEADER
 with open(nome_arquivo, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
 
     writer.writerow(['temperatura', 'humidade', 'data', 'rega_necessaria_min'])
     csvfile.flush()
 
-    print("A ler dados... Pressione Ctrl+C para parar.\n")
+    print("Reading data... Press Ctrl+C to stop.\n")
 
     temperatura = None
     ultima_rega = 0
@@ -53,7 +53,7 @@ with open(nome_arquivo, 'w', newline='') as csvfile:
     try:
         while True:
             linha = ser.readline().decode('utf-8', errors='replace').strip()
-            print("Recebido:", repr(linha))
+            print("Received:", repr(linha))
 
             if linha.startswith("Temperatura:"):
                 try:
@@ -66,17 +66,17 @@ with open(nome_arquivo, 'w', newline='') as csvfile:
                     umidade = float(linha.split(":")[1].replace("%", "").strip())
                     data = datetime.now()
 
-                    # Cálculo do tempo de rega com base na função
+                    # Irrigation time calculation based on the function
                     tempo_rega = calcular_tempo_rega(temperatura, umidade)
 
                     if umidade < umidade_limite:
                         ultima_rega = tempo_rega
-                        print(f"Rega necessária: {tempo_rega} minutos\n")
+                        print(f"Irrigation needed: {tempo_rega} minutes\n")
                     else:
-                        tempo_rega = 0  # Sem rega se a umidade está OK
-                        print("Sem necessidade de rega\n")
+                        tempo_rega = 0 
+                        print("No irrigation needed\n")
 
-                    # Grava dados no CSV, incluindo o tempo de rega
+                    # Write data to CSV, including irrigation time
                     writer.writerow([
                         round(temperatura, 1),
                         round(umidade, 1),
@@ -85,8 +85,8 @@ with open(nome_arquivo, 'w', newline='') as csvfile:
                     ])
                     csvfile.flush()
 
-                    print(f"Gravado: {temperatura},{umidade},{data},{tempo_rega} minutos\n")
+                    print(f"Saved: {temperatura},{umidade},{data},{tempo_rega} minutes\n")
                 except ValueError:
-                    print("Erro ao converter umidade.")
+                    print("Error converting humidity.")
     except KeyboardInterrupt:
-        print("\nInterrupção. Ficheiro CSV salvo e porta serial fechada.")
+        print("\nInterrupted. CSV file saved and serial port closed.")
