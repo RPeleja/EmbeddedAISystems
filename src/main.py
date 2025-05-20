@@ -68,14 +68,10 @@ def export_model_to_arduino(config, model, best_model_name):
         else:
             # Dynamically construct export path based on best_model_name
             export_name = config.MODELS_NAMES.get(best_model_name)
-            export_path = f"src/arduino/modelo_arduino/{export_name}.c"
+            export_path = f"src/arduino/modelo_arduino/{export_name}.cpp"
             with open(export_path, "w") as f:
                 f.write(m2c.export_to_c(model))
             logger.info(f"Model exported to {export_path}")
-            
-            
-            # double score(double input)
-            
 
 def main():
     # Initialize components
@@ -107,11 +103,11 @@ def main():
     
     # Split and transform
     X_train, X_test, y_train, y_test = trainer.split_data(X, y)
-    X_train_scaled, X_test_scaled = preprocessor.fit_transform(X_train, X_test)
+    # X_train_scaled, X_test_scaled = preprocessor.fit_transform(X_train, X_test)
 
     # Train and evaluate
-    trained_models = trainer.train_models(X_train_scaled, y_train)
-    results = evaluator.evaluate_models(trained_models, X_test_scaled, y_test)
+    trained_models = trainer.train_models(X_train, y_train)
+    results = evaluator.evaluate_models(trained_models, X_test, y_test)
     
     # Find best model with minimum RMSE
     best_model_name = min(results, key=lambda model: results[model]['rmse'])
