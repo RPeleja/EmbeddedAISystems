@@ -9,7 +9,7 @@ Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 
 int calcularTempoRega(float temperatura, float humidade) {
     // Set base values and limits
-    float tempoBaseRega = 10.0;  // watering minutes in normal conditions
+    float tempoBaseRega = 1.0;  // watering minutes in normal conditions
     
     // The higher the temperature, the longer the watering time
     float fatorTemperatura = 0.0;
