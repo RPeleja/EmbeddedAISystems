@@ -19,11 +19,11 @@ class Config:
     MODEL_PATH = '/models/'
     DATA_PATH = '/data/'
     MODELS = {
-        # 'linear_regression': LinearRegression(),
-        'random_forest': RandomForestRegressor(
-            n_estimators=100,
-            random_state=RANDOM_STATE
-        ),
+        'linear_regression': LinearRegression(),
+        # 'random_forest': RandomForestRegressor(
+        #     n_estimators=100,
+        #     random_state=RANDOM_STATE
+        # ),
         # 'xgboost': XGBRegressor(
         #     n_estimators=10,
         #     max_depth=3,
