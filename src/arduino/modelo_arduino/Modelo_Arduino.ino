@@ -21,17 +21,19 @@ int calcularTempoRega(float temperatura, float humidade) {
         fatorTemperatura = 3.0;   // Increase a bit on hot days
     } else if (temperatura >= 30.0 && temperatura < 35.0) {
         fatorTemperatura = 5.0;   // Increase more on very hot days
+    } else if (temperatura >= 35.0 && temperatura < 40.0) {
+        fatorTemperatura = 15.0;   // Increase more on very hot days
     } else {
-        fatorTemperatura = 8.0;   // Significantly increase on extremely hot days
+        fatorTemperatura = 48.0;   // Significantly increase on extremely hot days
     }
     
     // Adjustment based on humidity
     // The lower the humidity, the longer the watering time
     float fatorHumidade = 0.0;
     if (humidade > 80.0) {
-        fatorHumidade = -3.0;     // Reduce time on very humid days
+        fatorHumidade = -8.0;     // Reduce time on very humid days
     } else if (humidade >= 60.0 && humidade <= 80.0) {
-        fatorHumidade = -1.0;     // Slightly reduce on humid days
+        fatorHumidade = -6.0;     // Slightly reduce on humid days
     } else if (humidade >= 40.0 && humidade < 60.0) {
         fatorHumidade = 0.0;      // Normal conditions
     } else if (humidade >= 20.0 && humidade < 40.0) {

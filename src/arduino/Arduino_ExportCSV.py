@@ -45,16 +45,18 @@ def calcular_tempo_rega(temperatura, humidade):
         fator_temperatura = 3   # Increase a bit on hot days
     elif 30 <= temperatura < 35:
         fator_temperatura = 5   # Increase more on very hot days
+    elif 35 <= temperatura < 40:
+        fator_temperatura = 15   # Increase more on very hot days
     else:
-        fator_temperatura = 8   # Significantly increase on extremely hot days
+        fator_temperatura = 48   # Significantly increase on extremely hot days
     
     # Adjustment based on humidity
     # The lower the humidity, the longer the watering time
     fator_humidade = 0
     if humidade > 80:
-        fator_humidade = -3     # Reduce time on very humid days
+        fator_humidade = -8     # Reduce time on very humid days
     elif 60 <= humidade <= 80:
-        fator_humidade = -1     # Slightly reduce on humid days
+        fator_humidade = -6     # Slightly reduce on humid days
     elif 40 <= humidade < 60:
         fator_humidade = 0      # Normal conditions
     elif 20 <= humidade < 40:
