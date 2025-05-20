@@ -61,7 +61,7 @@ with open(nome_arquivo, 'w', newline='') as csvfile:
                 except ValueError:
                     temperatura = None
 
-            elif linha.startswith("humidade:") and temperatura is not None:
+            elif linha.startswith("Humidade:") and temperatura is not None:
                 try:
                     humidade = float(linha.split(":")[1].replace("%", "").strip())
                     data = datetime.now()
