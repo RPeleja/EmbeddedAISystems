@@ -74,7 +74,7 @@ with open(nome_arquivo, 'w', newline='') as csvfile:
                         print(f"Irrigation calculation: {tempo_rega} minutes\n")
                     else:
                         tempo_rega = 0 
-                        print("No irrigation needed\n")
+                        print(f"Irrigation calculation: {tempo_rega} minutes\n")
 
                     # Write data to CSV, including irrigation time
                     writer.writerow([
