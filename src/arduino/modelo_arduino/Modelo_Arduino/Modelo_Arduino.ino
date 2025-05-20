@@ -72,13 +72,13 @@ void loop() {
 
   float X_test[] = {temperatura, humidade, minutos };
   float prediction = model.predict(X_test);
-  Serial.println(prediction);
+  //Serial.println(prediction);
   delay(1000);
 
   // Show results on Serial Monitor
   Serial.print("Temperatura: "); Serial.print(temperatura); Serial.println(" °C");
   Serial.print("Humidade: "); Serial.print(humidade); Serial.println(" %");
-  Serial.print("Tempo de rega previsto: "); Serial.print(minutos); Serial.println(" minutos");
+  Serial.print("Tempo de rega previsto: "); Serial.print(prediction); Serial.println(" minutos");
   Serial.println("------------------------------");
 
   delay(5000);  // Wait 5 seconds between readings
