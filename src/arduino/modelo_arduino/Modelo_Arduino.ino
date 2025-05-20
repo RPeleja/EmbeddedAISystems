@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <iostream>
 #include "Adafruit_HTU21DF.h"
-#include "LinearRegressor.h"
+#include "LinearRegression.h"
 Eloquent::ML::Port::LinearRegression model;
 
 // Criar instância do sensor
