@@ -32,7 +32,7 @@ def calcular_tempo_rega(temperatura, humidade):
     float: Recommended irrigation time in minutes
     """
     # Set base values and limits
-    tempo_base_rega = 10  # watering minutes in normal conditions
+    tempo_base_rega = 5  # watering minutes in normal conditions
     
     # Adjustment based on temperature
     # The higher the temperature, the longer the watering time
@@ -65,9 +65,9 @@ def calcular_tempo_rega(temperatura, humidade):
     # Calculation of the final irrigation time
     tempo_rega = tempo_base_rega + fator_temperatura + fator_humidade
     
-    # Ensure the minimum time is at least 5 minutes
-    if tempo_rega < 5:
-        tempo_rega = 5
+    # Ensure the minimum time is at least 0 minutes
+    if tempo_rega < 0:
+        tempo_rega = 0
     
     return tempo_rega
 

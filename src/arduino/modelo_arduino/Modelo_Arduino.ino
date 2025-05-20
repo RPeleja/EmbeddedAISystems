@@ -7,7 +7,7 @@ Eloquent::ML::Port::LinearRegression model;
 // Criar instância do sensor
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 
-float calcularTempoRega(float temperatura, float humidade) {
+int calcularTempoRega(float temperatura, float humidade) {
     // Set base values and limits
     float tempoBaseRega = 10.0;  // watering minutes in normal conditions
     
@@ -44,11 +44,11 @@ float calcularTempoRega(float temperatura, float humidade) {
     float tempoRega = tempoBaseRega + fatorTemperatura + fatorHumidade;
     
     // Ensure the minimum time is at least 5 minutes
-    if (tempoRega < 5.0) {
-        tempoRega = 5.0;
+    if (tempoRega < 0.0) {
+        tempoRega = 0.0;
     }
     
-    return tempoRega;
+    return (int)tempoRega;
 }
 
 void setup() {
